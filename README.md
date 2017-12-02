@@ -1,23 +1,15 @@
-# Project
+# Josh and Oliver Project
 
-# CHESS
+## Chess
+Our plan is to make a working game of chess in python. We plan to use the existing python chess package but our project will involve building a wrapper to allow the system to prompt the user for moves and make the game function like an actual chess game with messages for things like captures, check, and illegal moves instead of the slightly perverse commands needed to use the package directly.
 
-Make a working game of chess in python terminal
+https://pypi.python.org/pypi/python-chess
 
-#if not:
-## Choice 1:
-- use sample file
-- create inverted index
-- create function search(word, query_type)
-- find a different set of data and search it
+If we finish this part ahead of schedule, we'll try to do some of the extensions including:
 
-## Extensions
-- most common words after removing stop words
+- most common words with removed
 - stemming library/algorithm
-
-## maybe
 - web app (maybe)
 - add info to inverted index
 - n grams
-
 ---------
