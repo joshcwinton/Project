@@ -1,5 +1,19 @@
 import chess
 
+
+class color:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
+
 board = chess.Board()
 
 print(chr(27) + "[2J")
@@ -30,7 +44,7 @@ def white_move():
                 white_move()
         except ValueError:
             print(chr(27) + "[2J")
-            print("Try again.")
+            print("Invalid input, try again.")
             white_move()
         else:
             print()
@@ -41,6 +55,10 @@ def white_move():
 def black_move():
     print(board)
     if checks() is True:
+        '''if board.is_check:
+            for i in board.fe:
+                if i is 'k':
+                    i = color.ITALIC + 'k' + color.END'''
         bmove = input("Black's move: ")
         try:
             bmove = board.parse_san(bmove)
@@ -53,10 +71,10 @@ def black_move():
                 black_move()
         except ValueError:
             print(chr(27) + "[2J")
-            print("Try again.")
+            print("Invalid input, try again.")
             black_move()
     else:
-        print(checks())
+        print(color.BOLD + checks() + color.END)
 
 
 def game():
@@ -64,8 +82,6 @@ def game():
         white_move()
         black_move()
         game()
-    else:
-        print(checks)
 
 
 game()
