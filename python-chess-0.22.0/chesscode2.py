@@ -4,6 +4,7 @@ board = chess.Board()
 
 print(chr(27) + "[2J")
 
+
 def checks():
     if board.is_stalemate():
         return "Stalemate!"
@@ -12,6 +13,7 @@ def checks():
     if board.is_checkmate():
         return "Checkmate!"
     return True
+
 
 def white_move():
     print(board)
@@ -26,7 +28,7 @@ def white_move():
                 print(chr(27) + "[2J")
                 print("Illegal move, try again.")
                 white_move()
-        except:
+        except ValueError:
             print(chr(27) + "[2J")
             print("Try again.")
             white_move()
@@ -34,6 +36,7 @@ def white_move():
             print()
     else:
         print(checks())
+
 
 def black_move():
     print(board)
@@ -48,12 +51,13 @@ def black_move():
                 print(chr(27) + "[2J")
                 print("Illegal move, try again.")
                 black_move()
-        except:
+        except ValueError:
             print(chr(27) + "[2J")
             print("Try again.")
             black_move()
     else:
         print(checks())
+
 
 def game():
     if checks() is True:
@@ -62,5 +66,6 @@ def game():
         game()
     else:
         print(checks)
+
 
 game()
