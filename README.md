@@ -8,8 +8,7 @@ Link to package: https://pypi.python.org/pypi/python-chess
 ### How to play
 - Input moves in standard algebraic notation, for example "e4".
 - Include an x to capture a piece, for example "Qxf7" uses the queen to capture the piece at f7.
-- Here's a basic game to test it out:
--- e4, e5, Qh5, Nc6, Bc4, Nf6, Qxf7
+- Here's a basic game to test it out: e4, e5, Qh5, Nc6, Bc4, Nf6, Qxf7
 
 If we finish this part ahead of schedule, we'll try to do some of the extensions including:
 - most common words with removed
