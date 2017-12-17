@@ -33,6 +33,19 @@ import copy
 import re
 import itertools
 
+
+class color:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
 COLORS = [WHITE, BLACK] = [True, False]
 COLOR_NAMES = ["black", "white"]
 
@@ -323,7 +336,7 @@ class Piece(object):
         if self.color == WHITE:
             return PIECE_SYMBOLS[self.piece_type].upper()
         else:
-            return PIECE_SYMBOLS[self.piece_type]
+            return PIECE_SYMBOLS[self.piece_type] 
 
     def unicode_symbol(self, invert_color=False):
         """
