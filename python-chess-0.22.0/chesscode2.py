@@ -23,14 +23,20 @@ def checks():
     if board.is_stalemate():
         return "Stalemate!"
     if board.is_insufficient_material():
-        return "Insufficient Material!"
+        return "Insufficient Material! The game is a draw"
     if board.is_checkmate():
-        return "Checkmate!"
+        return "Checkmate!" 
     return True
 
+def k_attk():
+    if board.is_check():
+        print("Check!")
+    
 
 def white_move():
     print(board)
+    if k_attk() is True:
+        print("Check!")
     if checks() is True:
         wmove = input("White's move: ")
         try:
@@ -54,11 +60,9 @@ def white_move():
 
 def black_move():
     print(board)
+    if k_attk() is True:
+        print("Check!")
     if checks() is True:
-        '''if board.is_check:
-            for i in board.fe:
-                if i is 'k':
-                    i = color.ITALIC + 'k' + color.END'''
         bmove = input("Black's move: ")
         try:
             bmove = board.parse_san(bmove)
