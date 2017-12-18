@@ -70,7 +70,7 @@ def white_move():
                 print("Invalid input, try again.")
                 white_move()
     else:
-        # prints what's wring if the game can't proceed
+        # prints what's wrong if the game can't proceed
         print(checks())
 
 
