@@ -25,25 +25,29 @@ def checks():
     if board.is_insufficient_material():
         return "Insufficient Material! The game is a draw"
     if board.is_checkmate():
-        return "Checkmate!" 
+        return "Checkmate!"
     return True
+
 
 def k_attk():
     if board.is_check():
-        print("Check!")
+        return True
+    return False
+
 
 board_pop = "undo"
-  
+
 
 def white_move():
     print(board)
     if k_attk() is True:
-        print('\033[1m' + "Check!")
+        print(color.BOLD + "Check!" + color.END)
     if checks() is True:
         wmove = input("White's move: ")
         if wmove == "undo":
-            print("Modified Black's last move.")
             board.pop()
+            print(chr(27) + "[2J")
+            print("Modifying Black's last move.")
             black_move()
         try:
             wmove = board.parse_san(wmove)
@@ -67,12 +71,13 @@ def white_move():
 def black_move():
     print(board)
     if k_attk() is True:
-        print('\033[1m' + "Check!")
+        print(color.BOLD + "Check!" + color.END)
     if checks() is True:
         bmove = input("Black's move: ")
         if bmove == "undo":
-            print("Modified white's last move.")
             board.pop()
+            print(chr(27) + "[2J")
+            print("Modifying White's last move.")
             white_move()
         try:
             bmove = board.parse_san(bmove)
