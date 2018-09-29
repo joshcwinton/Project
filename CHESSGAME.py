@@ -1,4 +1,4 @@
-import chess
+import packages.chess
 
 
 class color:
@@ -14,7 +14,7 @@ class color:
     END = '\033[0m'
 
 
-board = chess.Board()
+board = packages.chess.Board()
 
 print(chr(27) + "[2J")
 
@@ -25,7 +25,7 @@ def checks():
     if board.is_insufficient_material():
         return "Insufficient Material! The game is a draw"
     if board.is_checkmate():
-        return "Checkmate!" 
+        return "Checkmate!"
     return True
 
 def k_attk():
@@ -33,7 +33,7 @@ def k_attk():
         print("Check!")
 
 board_pop = "undo"
-  
+
 
 def white_move():
     print(board)
