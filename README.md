@@ -6,6 +6,7 @@ Our plan is to make a working game of chess in python. We plan to use the existi
 Link to package: https://pypi.python.org/pypi/python-chess
 
 ### How to play
+- `python3 CHESSGAME.py`
 - Input moves in standard algebraic notation, for example "e4".
 - Include an x to capture a piece, for example "Qxf7" uses the queen to capture the piece at f7.
 - Type undo to go back to the previous move.
